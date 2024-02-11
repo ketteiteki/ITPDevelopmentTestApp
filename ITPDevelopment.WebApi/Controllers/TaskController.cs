@@ -25,16 +25,16 @@ public class TaskController(TaskService taskService) : ControllerBase
         return result.ToActionResult();
     }
     
-    [HttpPost("Start")]
-    public async Task<IActionResult> StartTask([FromQuery] Guid taskId)
+    [HttpPost("Start/{taskId:guid}")]
+    public async Task<IActionResult> StartTask(Guid taskId)
     {
         var result = await taskService.StartTaskAsync(taskId);
 
         return result.ToActionResult();
     }
     
-    [HttpPost("End")]
-    public async Task<IActionResult> EndTask([FromQuery] Guid taskId)
+    [HttpPost("End/{taskId:guid}")]
+    public async Task<IActionResult> EndTask(Guid taskId)
     {
         var result = await taskService.EndTaskAsync(taskId);
 

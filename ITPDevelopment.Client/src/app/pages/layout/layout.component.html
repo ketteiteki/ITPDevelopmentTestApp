@@ -1,0 +1,46 @@
+<h1>ITPDevelopment TestApp</h1>
+
+<div class="blackBackground" (click)="layoutState.closeAll()"
+     *ngIf="layoutState.isCreateProjectWindowOpen || layoutState.isCreateTaskWindowOpen || layoutState.isTaskDescriptionWindowOpen">
+  <div class="createProjectWindow" *ngIf="layoutState.isCreateProjectWindowOpen" (click)="$event.stopPropagation()">
+    <p>Create Project</p>
+
+    <input type="text" [(ngModel)]="projectName" placeholder="Project Name">
+
+    <button (click)="onClickCreateProjectHandler()">Create</button>
+  </div>
+
+  <div class="createTaskWindow" *ngIf="layoutState.isCreateTaskWindowOpen" (click)="$event.stopPropagation()">
+    <p>Create Task</p>
+
+    <input placeholder="Task Name" [(ngModel)]="taskName">
+
+    <select class="select-css" [(ngModel)]="selectedProjectId">
+      <ng-container *ngIf="(projects$ | async) as projects">
+        @for (project of projects; track project) {
+          <option [ngValue]="project.id">{{ project.projectName }}</option>
+        }
+      </ng-container>
+    </select>
+
+    <textarea placeholder="Description" [(ngModel)]="taskDescription"></textarea>
+
+    <button (click)="onClickCreateTaskHandler()">Create</button>
+  </div>
+
+  <div class="taskDescriptionWindow" *ngIf="layoutState.isTaskDescriptionWindowOpen" (click)="$event.stopPropagation()">
+    <p>Task Description</p>
+
+    <textarea #textAreaElement [ngModel]="layoutState.TaskForViewDescription?.description"></textarea>
+
+    <button (click)="onClickUpdateTaskDescriptionHandler(textAreaElement.value)">Update</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="switchContainer">
+    <a class="tasksLink" routerLinkActive="tasksLinkActive" routerLink="/tasks">Tasks</a>
+    <a class="projectsLink" routerLinkActive="projectsLinkActive" routerLink="/projects">Projects</a>
+  </div>
+  <router-outlet></router-outlet>
+</div>

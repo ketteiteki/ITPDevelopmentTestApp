@@ -1,0 +1,19 @@
+<table class="table">
+  <thead #thead>
+    <tr>
+      <th>#</th>
+      <th>Project</th>
+      <th>Create Date</th>
+    </tr>
+    <p-contextMenu [target]="thead" [autoZIndex]="true" [model]="theadMenuItems"></p-contextMenu>
+  </thead>
+  <tbody *ngIf="(projects$ | async) as projects">
+    @for (project of projects; track project; let i = $index) {
+      <tr>
+        <td>{{i + 1}}</td>
+        <td>{{project.projectName}}</td>
+        <td>{{_dateService.getTime(project.createDate)}}</td>
+      </tr>
+    }
+  </tbody>
+</table>

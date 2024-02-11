@@ -1,0 +1,35 @@
+<table class="table">
+  <thead #thead>
+    <tr>
+      <th>#</th>
+      <th>Times</th>
+      <th>Ticket</th>
+      <th>Project</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+  </thead>
+  <p-contextMenu [target]="thead" [autoZIndex]="true" [model]="theadMenuItems"></p-contextMenu>
+  <tbody *ngIf="(tasks$ | async) as tasks">
+    @for (task of tasks; track task; let i = $index) {
+      <tr #tbodyTrItem (click)="onClickOpenTaskDescriptionHandler(task)" (mouseenter)="setSelectedTaskForContextMenu(task)">
+        <td>{{i + 1}}</td>
+        <td>
+          @if (task.startDate !== null && task.endDate !== null) {
+            {{_dateService.getSubtract(task.startDate, task.endDate)}}
+          } @else {
+            --:--
+          }
+        </td>
+        <td>{{ task.taskName }}</td>
+        <td>{{ task.project.projectName }}</td>
+        <td>{{ task.startDate === null ? '--:--' : _dateService.getTime(task.startDate) }}</td>
+        <td>{{ task.endDate === null ? '--:--' : _dateService.getTime(task.endDate) }}</td>
+        <p-contextMenu [target]="tbodyTrItem" [autoZIndex]="true" [model]="tbodyTdMenuItems"
+                       (onShow)="setSelectedTaskForContextMenu(task)" (click)="$event.stopPropagation()"
+                        *ngIf="selectedTaskForContextMenu?.id === task.id">
+        </p-contextMenu>
+      </tr>
+    }
+  </tbody>
+</table>
