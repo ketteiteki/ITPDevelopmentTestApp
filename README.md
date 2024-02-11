@@ -6,6 +6,8 @@
   <h1>ITPDevelopment TestApp</h1>
 </div>
 
+- **Video**: https://youtu.be/EfMUPplxrbo
+
 ## Required Software
 
 - **.NET SDK 8.0.101 or later:** https://dotnet.microsoft.com/en-us/download
