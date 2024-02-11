@@ -20,6 +20,8 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<ProjectService>();
 builder.Services.AddScoped<TaskService>();
 
+builder.Services.AddSpaStaticFiles(config => { config.RootPath = "wwwroot/browser"; });
+
 builder.Services.AddDbContext<DatabaseContext>(option =>
 {
     option.UseNpgsql(connectionString);
@@ -44,9 +46,17 @@ app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+app.UseSpaStaticFiles();
+
 app.UseCors(myAllowSpecificOrigins);
 
 app.MapControllers();
+
+app.Map(SpaRouting.Tasks, config => config.UseSpa(spa => spa.Options.SourcePath = "/wwwroot/browser"));
+app.Map(SpaRouting.Projects, config => config.UseSpa(spa => spa.Options.SourcePath = "/wwwroot/browser"));
+
+await app.MigrateDatabaseAsync();
 
 await app.InitializeSeedsAsync();
 

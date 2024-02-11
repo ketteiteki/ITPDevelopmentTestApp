@@ -20,4 +20,47 @@
       <ProjectReference Include="..\ITPDevelopment.Application\ITPDevelopment.Application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\browser\favicon.ico" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\index.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\main-QXVE5ADC.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\media\color-3LUHUBGQ.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\media\hue-RMMBQOAC.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\media\Inter-italic.var-SWFAXF2C.woff2" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\media\Inter-roman.var-WIJJYAE4.woff2" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\media\primeicons-77WLEVE2.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\media\primeicons-7C46RJHE.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\media\primeicons-AEJFRHCW.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\media\primeicons-SQ5LETCD.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\media\primeicons-XI7ZC3P3.woff2" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\polyfills-RX4V3J3S.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\browser\styles-G3EDTXBE.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\3rdpartylicenses.txt" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\config\config.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\assistant.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\contacts.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\credit-card.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\dollar-circle.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\logo.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\logout.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\minus.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\money.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\plus.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\search.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\shield.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\support.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\telegram.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\ticket.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\transaction.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\svg\user.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\color.dae87a04d07ca92b.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\favicon.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\hue.8b1818380241e6ac.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\index.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\main.5db8e2d4c6420f4f.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\polyfills.f47fad707261eecf.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\runtime.f152e8a39fc50e05.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\styles.d8166b25282c1363.css" />
+    </ItemGroup>
+
 </Project>
