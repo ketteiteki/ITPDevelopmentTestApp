@@ -28,6 +28,8 @@ public class TaskService(DatabaseContext context)
         context.TaskEntities.Add(task);
         await context.SaveChangesAsync();
 
+        await context.Entry(task).Reference(x => x.Project).LoadAsync();
+        
         return new Result<TaskEntity>(task);
     }
     

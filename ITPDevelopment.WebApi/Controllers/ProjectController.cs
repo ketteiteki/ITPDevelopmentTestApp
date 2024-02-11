@@ -9,6 +9,14 @@ namespace ITPDevelopment.WebApi.Controllers;
 [ApiController]
 public class ProjectController(ProjectService projectService) : ControllerBase
 {
+    [HttpGet]
+    public async Task<IActionResult> GetProjectList()
+    {
+        var result = await projectService.GetProjectListAsync();
+
+        return result.ToActionResult();
+    }
+    
     [HttpPost]
     public async Task<IActionResult> CreateProject([FromBody] CreateProjectRequest request)
     {
