@@ -3,8 +3,6 @@ WORKDIR /app
 ENV ASPNETCORE_ENVIRONMENT Docker
 EXPOSE 80
 
-ENV ASPNETCORE_FORWARDEDHEADERS_ENABLED=true
-
 FROM node:20.10.0-alpine AS angularBuild
 WORKDIR /angular
 COPY ["ITPDevelopment.Client/package.json", "ITPDevelopment.Client/"]
