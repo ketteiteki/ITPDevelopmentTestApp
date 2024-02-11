@@ -32,4 +32,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 COPY --from=angularBuild "/angular/ITPDevelopment.Client/dist/client" wwwroot
-ENTRYPOINT ["dotnet", "ITPDevelopment.WebApi.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet ITPDevelopment.WebApi.dll
