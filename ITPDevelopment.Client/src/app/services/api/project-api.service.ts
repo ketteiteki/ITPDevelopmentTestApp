@@ -3,16 +3,20 @@ import {HttpClient} from "@angular/common/http";
 import {IProjectEntity} from "../../types/interfaces/IProjectEntity";
 import {IResult} from "../../types/interfaces/IResult";
 import {CreateProjectRequest} from "../../types/requests/CreateProjectRequest";
+import {ConfigService} from "../common/config.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectApiService {
-  private readonly baseUrl: string = "https://localhost:7031/";
+  private readonly baseUrl: string;
 
   constructor(
-    private _httpClient: HttpClient
-  ) { }
+    private _httpClient: HttpClient,
+    private _configService: ConfigService
+  ) {
+    this.baseUrl = _configService.getServerUrl();
+  }
 
   // requests
 

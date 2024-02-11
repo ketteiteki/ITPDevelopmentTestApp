@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {ITaskEntity} from "../../types/interfaces/ITaskEntity";
 import {CreateTaskRequest} from "../../types/requests/CreateTaskRequest";
 import {UpdateTaskDescriptionRequest} from "../../types/requests/UpdateTaskDescriptionRequest";
+import {ConfigService} from "../common/config.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,11 @@ export class TaskApiService {
   private readonly baseUrl: string = "https://localhost:7031/";
 
   constructor(
-    private _httpClient: HttpClient
-  ) { }
+    private _httpClient: HttpClient,
+    private _configService: ConfigService
+  ) {
+    this.baseUrl = _configService.getServerUrl();
+  }
 
   // GET /Task
   public getTaskList(offset: number, limit: number) {
