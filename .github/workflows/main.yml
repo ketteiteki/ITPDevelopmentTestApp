@@ -18,7 +18,7 @@ jobs:
       - name: Build and push
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web --arg FRONT_API_URL=https://itpdevelopmenttestapp-3de58642e268.herokuapp.com/
+        run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web --context-path ./Heroku.DockerFile --arg FRONT_API_URL=https://itpdevelopmenttestapp-3de58642e268.herokuapp.com/
       - name: Release
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
